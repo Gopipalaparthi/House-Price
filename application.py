@@ -28,14 +28,14 @@ def predict(bedrooms,bathrooms,status,size,location,facing,Types):
     result = model.predict(user_input)[0].round(2)
     return result
 
-@appliction.route('/')
+@application.route('/')
 def index():
     return render_template('index.html',Prediction=result,Status=Status,Location=Location,Facing=Facing,Type=Type)
 
     
 
 
-@appliction.route('/predict',methods=['POST'])
+@application.route('/predict',methods=['POST'])
 def result():
     bedrooms = int(request.form['bedrooms'])
     bathrooms = int(request.form['bathrooms'])
