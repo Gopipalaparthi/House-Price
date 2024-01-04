@@ -4,7 +4,7 @@ import pickle
   
 model = pickle.load(open('House_Price.pkl','rb'))
 
-appliction = Flask(__name__)
+application = Flask(__name__)
 
 Status  = {
 "New" : 0,"Ready to move" : 1,"Resale" : 2,"Under Construction" : 3,}
@@ -51,4 +51,4 @@ def result():
     return render_template('index.html',prediction=result,Status=Status,Location=Location,Facing=Facing,Type=Type)   
 
 if __name__=="__main__":
-    appliction.run(use_reloader=True,debug=True)    
+    appliction.run()    
